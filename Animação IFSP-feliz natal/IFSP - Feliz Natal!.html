@@ -1,0 +1,169 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFSP Feliz Natal!</title>
+  <style>
+    body { /* fundo */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #001f3f;
+      font-family: cursive;
+    }
+	
+
+    .natal { /* escrita IFSP */
+      font-size: 120px;
+      color: #34eb5e;
+      text-shadow: 0 0 10px #34eb5e, 0 0 20px #34eb5e, 0 0 30px #34eb5e; /* brilho dela */
+      position: relative;
+      animation: pisca 1.5s infinite alternate;
+    }
+
+    .feliz-natal { /* escrita feliz natal */
+      font-size: 50px;
+      color: #ff3b3b;
+      text-shadow: 0 0 10px #ff3b3b, 0 0 20px #ff3b3b, 0 0 30px #ff3b3b;
+      margin-top: -20px;
+      animation: pisca2 1.8s infinite alternate;
+    }
+
+    @keyframes pisca {
+      0% { text-shadow: 0 0 10px #34eb5e, 0 0 20px #34eb5e, 0 0 30px #34eb5e; } /* animação IFSP */
+      100% { text-shadow: 0 0 70px #34eb5e, 0 0 70px #34eb5e, 0 0 70px #34eb5e; } /* animação IFSP */
+    }
+
+    @keyframes pisca2 {
+      0% { text-shadow: 0 0 10px #ff3b3b, 0 0 20px #ff3b3b, 0 0 30px #ff3b3b; } /* animação feliz natal */
+      100% { text-shadow: 0 0 20px #ff3b3b, 0 0 30px #ff3b3b, 0 0 40px #ff3b3b; } /* animação feliz natal */
+    }
+
+    .neve {
+      position: absolute; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* nada acontece ao passar o mouse */
+      overflow: hidden;
+    }
+
+    .floco {
+      position: absolute;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: cair 10s linear infinite;
+    }
+	
+	  .audio-container { /* css para deixar o botao play da musica em baixo */
+      position: fixed;
+      bottom: 20px; 
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10; /* serve pra deixa na frente ou encima dos troços que for caindo */
+    }
+
+    @keyframes cair {
+      0% { transform: translateY(-10px) translateX(0); opacity: 0.8; } /* animação floco */
+      100% { transform: translateY(100vh) translateX(20px); opacity: 0.1; } /* animação floco */
+    }
+	
+	.image-bouncing {
+      position: absolute;
+      width: 150px; /* Tamanho imagem */
+      top: 50%; /* Centraliza */
+      transform: translateY(-50%); 
+      animation: bounce-horizontal 5s infinite alternate ease-in-out;
+    }
+	
+	.image-cassio {
+      width: 150px; /* Tamanho imagem */
+      transform: translateY(-50%); 
+      animation: bounce-vertical 5s infinite alternate ease-in-out;
+    }
+	
+	.image-cassio2 {
+      width: 150px; /* Tamanho imagem */
+      transform: translateY(-50%); 
+      animation: bounce-vertical 5s infinite alternate ease-in-out;
+    }
+
+	@keyframes bounce-vertical {
+      0% {
+        top: 0;
+        transform: translateY(50%) translateX(0);
+      }
+      100% {
+        top: calc(109% - 150px); /* Ajuste imagem  */
+        transform: translateY(-100%) translateX(50%);
+      }
+    }
+
+    @keyframes bounce-horizontal {
+      0% {
+        left: 0;
+        transform: translateY(-50%) translateX(0);
+      }
+      100% {
+        left: calc(109% - 150px); /* Ajuste imagem  */
+        transform: translateY(-50%) translateX(-100%);
+      }
+    }
+	
+	.images-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      margin-top: -30px;
+    }
+ 
+    .images-container img {
+      width: 150px;
+    }
+	
+  </style>
+</head>
+<body>
+
+  <div class="natal">IFSP</div>
+  <div class="feliz-natal">Feliz Natal</div>
+  
+   <div class="images-container">
+    <img src="imagem1.jpg" alt="Imagem 1" class="image-cassio">
+    <img src="imagem2.jpg" alt="Imagem 2" class="image-cassio2">
+  </div>
+
+  <div class="neve">
+    <div class="floco" style="left: 10%; animation-duration: 8s;"></div>
+    <div class="floco" style="left: 20%; animation-duration: 10s; animation-delay: 1s;"></div> 
+    <div class="floco" style="left: 30%; animation-duration: 6s; animation-delay: 2s;"></div>
+    <div class="floco" style="left: 40%; animation-durat ion: 9s; animation-delay: 3s;"></div>
+    <div class="floco" style="left: 50%; animation-duration: 11s; animation-delay: 1.5s;"></div>
+    <div class="floco" style="left: 60%; animation-duration: 7s; animation-delay: 2.5s;"></div>
+    <div class="floco" style="left: 70%; animation-duration: 8.5s; animation-delay: 3.5s;"></div>
+    <div class="floco" style="left: 80%; animation-duration: 10s; animation-delay: 4s;"></div>
+    <div class="floco" style="left: 90%; animation-duration: 9.5s; animation-delay: 1.8s;"></div>
+  </div>
+ 
+ <img src="natal.png.png" alt="Natal" class="image-bouncing">
+    
+  <div class="audio-container">
+  <audio controls autoplay> /* controls é para aparecer um botão para dar o play e o autoplay é para quando abrir o site começa */
+	  <source src="musica.mp3" type="audio/mpeg">/* coloca mp3 no site */
+   </audio>
+   </div> 
+  
+</body>
+</html>
